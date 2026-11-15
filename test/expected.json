@@ -9,6 +9,7 @@
     "katex:false",
     "hljs:false"
   ],
+  "versionedUrls": true,
   "hiddenAtStart": [
     "where:none",
     "find:none",

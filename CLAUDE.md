@@ -17,7 +17,7 @@
 
 ## テストのやり方
 1. md-view のフォルダで `python test/serve.py 8790` を動かす（バックグラウンドで）。
-2. `http://localhost:8790/test/regress.html` を開く。md-view を iframe で開いて自動で操作し、結果を `test/expected.json` と比べる（数十秒かかる）。「OK：57 項目すべて同じです」なら変わっていない。`serve.py` は HTTP/1.1 で返し、`Cache-Control: no-cache` を付ける（Windows で読み込みが途中で切れるのと、古い JS がキャッシュから読まれるのを防ぐため）。`python -m http.server` では、これが起きることがある。
+2. `http://localhost:8790/test/regress.html` を開く。md-view を iframe で開いて自動で操作し、結果を `test/expected.json` と比べる（数十秒かかる）。「OK：58 項目すべて同じです」なら変わっていない。`serve.py` は HTTP/1.1 で返し、`Cache-Control: no-cache` を付ける（Windows で読み込みが途中で切れるのと、古い JS がキャッシュから読まれるのを防ぐため）。`python -m http.server` では、これが起きることがある。
 3. 動きを**意図して**変えたときは、`regress.html?update` を開く。`serve.py` が PUT を受け付けるので、そのまま `expected.json` に保存される。変わった項目が意図どおりかを、保存する前に必ず確かめる。
 4. 終わったらサーバーを止める。
 - テストは OPFS に `test/sample/` を写して使い、終わったら消す。localhost の localStorage と IndexedDB の `md-view` も消すが、ユーザーが `file://` で使っているデータとは別の場所なので影響しない。
@@ -27,5 +27,7 @@
 
 ## 改修したら
 - `CHANGELOG.md` に版の番号と変更点を書き、`js/core.js` の `VERSION` をそろえる（機能の追加・画面の変更はマイナー、不具合・文言の修正はパッチ）。
+- `md-view.html` の js・css の URL の `?v=…` も、同じ版にそろえる。エックスサーバーは js・css に 1 年のキャッシュを付けるので、版を変えないと Web では古いものが使われ続ける（回帰テストの `versionedUrls` で確かめている）。
+- Web に置くときは、`md-view.html` の写しを `index.html` という名前でも置く。
 - 回帰テストを動かす。新しい機能には、回帰テストの項目も足す。
 - 使い方が変わったら `README.md` も直す。

@@ -3,7 +3,7 @@
 // どのファイルも、ふつうの <script> で読む（file:// で開いても動くように、ES モジュールにしない）。
 'use strict';
 
-const VERSION = '0.13.1';
+const VERSION = '0.13.2';
 const EXAMPLE_EXCLUDES = '.git, node_modules, .svn, .idea, .vs, __pycache__'; // 入力欄に薄く見せる例（初期値は空）
 const MAX_VIEW_SIZE = 20 * 1024 * 1024;  // これより大きいファイルは開かない
 const GREP_MAX_SIZE = 5 * 1024 * 1024;   // これより大きいファイルは中身を探さない
@@ -25,7 +25,7 @@ const state = {
 
 // 回帰テスト（test/regress.js）から状態を見るための入口。トップレベルの const は window から見えず、
 // CSP（script-src 'self'）の下では eval も使えないため
-window.mdView = { state, libLoaded: (name) => !!LIBS[name].get() };
+window.mdView = { version: VERSION, state, libLoaded: (name) => !!LIBS[name].get() };
 
 // ---------------------------------------------------------------- 使うときだけ読み込むライブラリ
 // 大きいライブラリは、ページを開いたときには読まず、初めて使うときに <script> を足して読む
@@ -42,7 +42,7 @@ function loadLib(name) {
   if (!libLoading[name]) {
     libLoading[name] = new Promise((resolve, reject) => {
       const s = document.createElement('script');
-      s.src = lib.src;
+      s.src = lib.src + '?v=' + VERSION; // 版ごとに URL を変える（サーバーが js を長くキャッシュさせるため）
       s.onload = () => resolve(lib.get());
       s.onerror = () => { delete libLoading[name]; s.remove(); reject(new Error(`${lib.src} を読み込めませんでした`)); };
       document.head.appendChild(s);

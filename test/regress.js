@@ -169,6 +169,10 @@ async function run() {
   // 大きいライブラリは、開いた時点では読み込まない
   r.libsAtStart = ['mermaid', 'katex', 'hljs'].map((n) => n + ':' + w.mdView.libLoaded(n));
   // フォルダを選ぶ前は「場所」と「探す」の欄を出さない
+  // js・css の URL には版を付ける（サーバーが js・css を 1 年キャッシュさせるので、版を変えたら URL も変わるように）
+  r.versionedUrls = [...d.querySelectorAll('script[src], link[rel=stylesheet]')]
+    .map((e) => e.getAttribute('src') || e.getAttribute('href'))
+    .filter((u) => !u.endsWith('?v=' + w.mdView.version)).length === 0;
   r.hiddenAtStart = ['where', 'find', 'hits'].map((id) => id + ':' + w.getComputedStyle($(id)).display);
 
   // ---- 読み込み・tree
