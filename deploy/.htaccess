@@ -1,0 +1,28 @@
+# md-view を https://md-view.oha-yo.com/ で公開するための設定 https://github.com/oha-yo/md-view
+# サーバーの public_html/md-view.oha-yo.com/ に、md-view.html・md-view.css・js/・lib/ と一緒に置く（test/ と deploy/ は置かない）。
+
+# 最初に開くファイル（名前を index.html に変えなくてよい）
+DirectoryIndex md-view.html
+Options -Indexes
+
+# http で開かれたときや、ブログの下の URL（oha-yo.com/md-view.oha-yo.com/）で開かれたときは、
+# https のサブドメインへ移す（ブラウザの中のデータは URL ごとに分かれるので、入口を 1 つにそろえる）
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^md-view\.oha-yo\.com$ [NC,OR]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://md-view.oha-yo.com/$1 [R=301,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+# 外への通信・外のファイルの読み込みを、ブラウザの側で禁止する。
+# - スクリプトは、このサイトに置いたもの（js/・lib/）だけ
+# - connect-src 'none'：fetch などで外に送ることを禁止（いちばん大事なところ）
+# - 画像・CSS は、このサイトのものと、選んだフォルダから読んだもの（blob:）だけ。外の画像は出ない
+# - 見た目は、Mermaid の図と別画面がページの中に書くので 'unsafe-inline' を許す
+Header always set Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' blob:; img-src 'self' blob: data:; font-src 'self'; frame-src 'self' blob:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "no-referrer"
+# 更新したら、次に開いたときにすぐ新しい版になるようにする（毎回サーバーに変わったかを確かめる）
+Header set Cache-Control "no-cache"
+</IfModule>

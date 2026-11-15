@@ -1,0 +1,93 @@
+<!doctype html>
+<!-- md-view https://github.com/oha-yo/md-view -->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>md-view</title>
+<link rel="stylesheet" href="md-view.css">
+</head>
+<body>
+<header class="bar">
+  <h1>md-view <span id="version" class="ver"></span></h1>
+  <button id="btn-pick" class="primary">フォルダを選ぶ</button>
+  <input id="input-dir" type="file" webkitdirectory hidden>
+  <button id="btn-reload" disabled title="フォルダの中身を読み直します">読み直す</button>
+  <button id="btn-save" disabled title="すべてのフォルダを開いた状態で保存します">tree を保存</button>
+  <label class="opt" title="tree の各行の先頭に更新日時を付けます（画面・保存・コピー）"><input id="chk-date" type="checkbox"> 更新日時を付ける</label>
+  <button id="btn-copy" disabled title="今見えている状態でコピーします。閉じているフォルダは中身を省きます">tree をコピー</button>
+  <label class="auto"><input id="chk-auto" type="checkbox" checked> 開いた画面を自動で更新</label>
+</header>
+
+<details class="settings">
+  <summary>設定</summary>
+  <label>外すフォルダ（カンマ区切り）
+    <input id="excludes" type="text" spellcheck="false">
+  </label>
+  <p class="note">設定を変えたら「読み直す」を押してください。</p>
+</details>
+
+<main id="drop" class="drop">
+  <div id="where" class="where" hidden>
+    <span class="lbl">場所</span>
+    <span id="where-show">
+      <code id="where-path"></code>
+      <button id="btn-path-copy" class="icon-btn" title="フルパスをコピー" aria-label="フルパスをコピー"></button>
+      <button id="btn-path-edit" class="small">直す</button>
+    </span>
+    <span id="where-form" hidden>
+      <input id="path-input" type="text" spellcheck="false" placeholder="フォルダのフルパスを貼り付け（例：D:\work\docs）">
+      <button id="btn-path-save" class="small primary">覚える</button>
+      <span class="hint">ブラウザはフルパスを教えないので、一度だけ貼り付けてください。エクスプローラーでフォルダを選んで Ctrl+Shift+C でコピーできます。親のフォルダを覚えさせておくと、その下のフォルダは自動で出ます。</span>
+    </span>
+  </div>
+  <div id="status" class="status">「フォルダを選ぶ」で選ぶか、ここにフォルダをドラッグして落とすと、tree が出ます。ファイルはこのブラウザの中で読むだけで、どこにも送りません。</div>
+  <div id="find" class="find" hidden>
+    <label class="sort" title="tree の並べ方。コピーと保存も、この並びになります">並び
+      <select id="sort">
+        <option value="name">名前</option>
+        <option value="mtime">更新日時（新しい順）</option>
+        <option value="size">大きさ（大きい順）</option>
+      </select>
+    </label>
+    <select id="find-mode" title="ファイル名で探すか、ファイルの中身で探すか">
+      <option value="name">ファイル名</option>
+      <option value="grep">中身（grep）</option>
+    </select>
+    <input id="find-input" type="text" spellcheck="false">
+    <button id="find-clear" class="small" hidden title="絞り込みをやめる">×</button>
+    <span id="find-count" class="find-count"></span>
+    <span class="date-filter" title="from だけなら、その日以降。to だけなら、その日以前">
+      更新日
+      <input id="date-from" type="date" aria-label="更新日 from">
+      〜
+      <input id="date-to" type="date" aria-label="更新日 to">
+      <button id="date-clear" class="small" hidden title="更新日の絞り込みをやめる">×</button>
+    </span>
+    <span id="grep-opts" class="grep-opts" hidden>
+      <label><input id="grep-case" type="checkbox"> 大文字・小文字を区別</label>
+      <label><input id="grep-re" type="checkbox"> 正規表現</label>
+    </span>
+  </div>
+  <div id="tree" class="tree"></div>
+  <div id="hits" class="hits" hidden>
+    <div class="hits-head"><span id="hits-summary"></span><button id="btn-copy-grep" class="small">grep 結果をコピー</button></div>
+    <div id="hits-list"></div>
+  </div>
+</main>
+
+<script src="lib/marked.min.js"></script>
+<script src="lib/purify.min.js"></script>
+<script src="lib/highlight-theme.js"></script>
+<!-- Mermaid・KaTeX・highlight.js は、使うときだけ読み込む（js/core.js の LIBS） -->
+<!-- 役割ごとのファイル。ふつうの <script> なので、この順に読む（main.js が最後） -->
+<script src="js/core.js"></script>
+<script src="js/files.js"></script>
+<script src="js/tree.js"></script>
+<script src="js/find.js"></script>
+<script src="js/render.js"></script>
+<script src="js/viewer.js"></script>
+<script src="js/fullpath.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

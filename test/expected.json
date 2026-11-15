@@ -1,0 +1,492 @@
+{
+  "settings": {
+    "excludes": "",
+    "placeholder": "例：.git, node_modules, .svn, .idea, .vs, __pycache__",
+    "date": false
+  },
+  "libsAtStart": [
+    "mermaid:false",
+    "katex:false",
+    "hljs:false"
+  ],
+  "load": {
+    "status": "「mdv-regress」 フォルダ 6 個・ファイル 14 個",
+    "files": [
+      "page.css×0",
+      "dot.png(bin)×0",
+      "features.md×2",
+      "guide.md×2",
+      "page.html×2",
+      "a.js×0",
+      "A.java×0",
+      "data.unknown(bin)×0",
+      "euc.txt×0",
+      "LICENSE×0",
+      "sjis.sql×0",
+      "v2.txt×0",
+      "v10.txt×0",
+      "README.md×2"
+    ],
+    "reload": true
+  },
+  "treeFull": "mdv-regress/\n├── docs/\n│   ├── css/\n│   │   └── page.css\n│   ├── img/\n│   │   └── dot.png\n│   ├── features.md\n│   ├── guide.md\n│   └── page.html\n├── node_modules/\n│   └── x/\n│       └── a.js\n├── src/\n│   ├── A.java\n│   ├── data.unknown\n│   ├── euc.txt\n│   ├── LICENSE\n│   ├── sjis.sql\n│   ├── v2.txt\n│   └── v10.txt\n└── README.md\n\n6 directories, 14 files\n",
+  "treeFullDate": "2026/11/20 09:00 mdv-regress/\n2026/11/20 09:00 ├── docs/\n2026/11/03 09:00 │   ├── css/\n2026/11/03 09:00 │   │   └── page.css\n2026/11/02 08:00 │   ├── img/\n2026/11/02 08:00 │   │   └── dot.png\n2026/11/20 09:00 │   ├── features.md\n2026/11/01 00:00 │   ├── guide.md\n2026/11/05 12:00 │   └── page.html\n2026/11/13 00:00 ├── node_modules/\n2026/11/13 00:00 │   └── x/\n2026/11/13 00:00 │       └── a.js\n2026/11/12 12:00 ├── src/\n2026/11/10 23:59 │   ├── A.java\n2026/11/12 11:00 │   ├── data.unknown\n2026/11/11 00:00 │   ├── euc.txt\n2026/11/12 12:00 │   ├── LICENSE\n2026/11/12 10:00 │   ├── sjis.sql\n2026/09/01 10:00 │   ├── v2.txt\n2026/09/02 10:00 │   └── v10.txt\n2026/10/31 23:59 └── README.md\n\n6 directories, 14 files\n",
+  "copyDefault": "mdv-regress/\n├── docs/\n│   ├── css/  …（省略：ファイル 1）\n│   ├── img/  …（省略：ファイル 1）\n│   ├── features.md\n│   ├── guide.md\n│   └── page.html\n├── node_modules/\n│   └── x/  …（省略：ファイル 1）\n├── src/\n│   ├── A.java\n│   ├── data.unknown\n│   ├── euc.txt\n│   ├── LICENSE\n│   ├── sjis.sql\n│   ├── v2.txt\n│   └── v10.txt\n└── README.md\n\n6 directories, 14 files\n",
+  "dateColumn": {
+    "cls": true,
+    "first": "2026/11/20 09:00",
+    "stored": "1"
+  },
+  "copyDate": "2026/11/20 09:00 mdv-regress/\n2026/11/20 09:00 ├── docs/\n2026/11/03 09:00 │   ├── css/  …（省略：ファイル 1）\n2026/11/02 08:00 │   ├── img/  …（省略：ファイル 1）\n2026/11/20 09:00 │   ├── features.md\n2026/11/01 00:00 │   ├── guide.md\n2026/11/05 12:00 │   └── page.html\n2026/11/13 00:00 ├── node_modules/\n2026/11/13 00:00 │   └── x/  …（省略：ファイル 1）\n2026/11/12 12:00 ├── src/\n2026/11/10 23:59 │   ├── A.java\n2026/11/12 11:00 │   ├── data.unknown\n2026/11/11 00:00 │   ├── euc.txt\n2026/11/12 12:00 │   ├── LICENSE\n2026/11/12 10:00 │   ├── sjis.sql\n2026/09/01 10:00 │   ├── v2.txt\n2026/09/02 10:00 │   └── v10.txt\n2026/10/31 23:59 └── README.md\n\n6 directories, 14 files\n",
+  "saveDate": "2026/11/20 09:00 mdv-regress/\n2026/11/20 09:00 ├── docs/\n2026/11/03 09:00 │   ├── css/\n2026/11/03 09:00 │   │   └── page.css\n2026/11/02 08:00 │   ├── img/\n2026/11/02 08:00 │   │   └── dot.png\n2026/11/20 09:00 │   ├── features.md\n2026/11/01 00:00 │   ├── guide.md\n2026/11/05 12:00 │   └── page.html\n2026/11/13 00:00 ├── node_modules/\n2026/11/13 00:00 │   └── x/\n2026/11/13 00:00 │       └── a.js\n2026/11/12 12:00 ├── src/\n2026/11/10 23:59 │   ├── A.java\n2026/11/12 11:00 │   ├── data.unknown\n2026/11/11 00:00 │   ├── euc.txt\n2026/11/12 12:00 │   ├── LICENSE\n2026/11/12 10:00 │   ├── sjis.sql\n2026/09/01 10:00 │   ├── v2.txt\n2026/09/02 10:00 │   └── v10.txt\n2026/10/31 23:59 └── README.md\n\n6 directories, 14 files\n",
+  "copyRootClosed": "mdv-regress/  …（省略：フォルダ 6・ファイル 14）\n\n6 directories, 14 files\n",
+  "sortName": [
+    "A.java",
+    "data.unknown",
+    "euc.txt",
+    "LICENSE",
+    "sjis.sql",
+    "v2.txt",
+    "v10.txt"
+  ],
+  "sortMtime": {
+    "src": [
+      "LICENSE",
+      "data.unknown",
+      "sjis.sql",
+      "euc.txt",
+      "A.java",
+      "v10.txt",
+      "v2.txt"
+    ],
+    "top": [
+      "docs",
+      "node_modules",
+      "src",
+      "README.md"
+    ],
+    "kept": true,
+    "stored": "mtime"
+  },
+  "sortSize": {
+    "src": [
+      "v10.txt",
+      "A.java",
+      "euc.txt",
+      "LICENSE",
+      "data.unknown",
+      "sjis.sql",
+      "v2.txt"
+    ],
+    "top": [
+      "docs",
+      "node_modules",
+      "src",
+      "README.md"
+    ]
+  },
+  "sortSizeCopy": "mdv-regress/\n├── docs/\n│   ├── css/\n│   │   └── page.css\n│   ├── img/  …（省略：ファイル 1）\n│   ├── page.html\n│   ├── features.md\n│   └── guide.md\n├── node_modules/\n│   └── x/  …（省略：ファイル 1）\n├── src/\n│   ├── v10.txt\n│   ├── A.java\n│   ├── euc.txt\n│   ├── LICENSE\n│   ├── data.unknown\n│   ├── sjis.sql\n│   └── v2.txt\n└── README.md\n\n6 directories, 14 files\n",
+  "sortBack": [
+    "A.java",
+    "data.unknown",
+    "euc.txt",
+    "LICENSE",
+    "sjis.sql",
+    "v2.txt",
+    "v10.txt"
+  ],
+  "exclude": {
+    "files": 13,
+    "has": false,
+    "stored": "node_modules, .git"
+  },
+  "findWild": {
+    "files": [
+      "features.md×2",
+      "guide.md×2",
+      "README.md×2"
+    ],
+    "count": "3 個"
+  },
+  "findPathAnd": {
+    "files": [
+      "page.html×2"
+    ],
+    "count": "1 個"
+  },
+  "findCopy": "mdv-regress/\n└── docs/\n    └── page.html\n\n4 directories, 13 files\n（絞り込み：ファイル名を「docs/ html」で検索。見つかった 1 個だけを出しています）\n",
+  "findNone": {
+    "files": [],
+    "count": "0 個"
+  },
+  "findClear": {
+    "files": [
+      "page.css×0",
+      "dot.png(bin)×0",
+      "features.md×2",
+      "guide.md×2",
+      "page.html×2",
+      "A.java×0",
+      "data.unknown(bin)×0",
+      "euc.txt×0",
+      "LICENSE×0",
+      "sjis.sql×0",
+      "v2.txt×0",
+      "v10.txt×0",
+      "README.md×2"
+    ],
+    "count": ""
+  },
+  "findClearOpen": [
+    true,
+    true,
+    false,
+    false,
+    true
+  ],
+  "dateFrom": {
+    "files": [
+      "page.css×0",
+      "dot.png(bin)×0",
+      "features.md×2",
+      "guide.md×2",
+      "page.html×2",
+      "A.java×0",
+      "data.unknown(bin)×0",
+      "euc.txt×0",
+      "LICENSE×0",
+      "sjis.sql×0"
+    ],
+    "count": "10 個"
+  },
+  "dateTo": {
+    "files": [
+      "page.css×0",
+      "dot.png(bin)×0",
+      "guide.md×2",
+      "page.html×2",
+      "A.java×0",
+      "v2.txt×0",
+      "v10.txt×0",
+      "README.md×2"
+    ],
+    "count": "8 個"
+  },
+  "dateBoth": {
+    "files": [
+      "page.css×0",
+      "dot.png(bin)×0",
+      "guide.md×2",
+      "page.html×2",
+      "A.java×0"
+    ],
+    "count": "5 個"
+  },
+  "dateRev": {
+    "files": [],
+    "count": "from が to より後の日になっています"
+  },
+  "dateName": {
+    "files": [
+      "guide.md×2"
+    ],
+    "count": "1 個"
+  },
+  "dateCopy": "mdv-regress/\n└── docs/\n    └── guide.md\n\n4 directories, 13 files\n（絞り込み：ファイル名を「*.md」で検索、更新日 2026/11/01〜2026/11/10。見つかった 1 個だけを出しています）\n",
+  "grepJa": {
+    "files": [
+      "euc.txt×0",
+      "sjis.sql×0"
+    ],
+    "count": "ファイル 2 個、2 件"
+  },
+  "grepCI": {
+    "files": [
+      "guide.md×2",
+      "README.md×2"
+    ],
+    "count": "ファイル 2 個、3 件"
+  },
+  "grepCase": {
+    "files": [],
+    "count": "ファイル 0 個、0 件"
+  },
+  "grepRe": {
+    "files": [
+      "features.md×2",
+      "guide.md×2",
+      "README.md×2"
+    ],
+    "count": "ファイル 3 個、3 件"
+  },
+  "grepRows": [
+    "hit-file:docs/guide.md<span class=\"n\">1 件</span>",
+    "hit-line:<span class=\"ln\">1</span><span><mark>#</mark> ガイド</span>",
+    "hit-file:docs/features.md<span class=\"n\">1 件</span>",
+    "hit-line:<span class=\"ln\">1</span><span><mark>#</mark> 機能の確認</span>",
+    "hit-file:README.md<span class=\"n\">1 件</span>",
+    "hit-line:<span class=\"ln\">1</span><span><mark>#</mark> サンプル</span>"
+  ],
+  "grepBad": {
+    "files": [],
+    "count": "正規表現の書き方が違います"
+  },
+  "grepDate": {
+    "files": [
+      "guide.md×2"
+    ],
+    "count": "ファイル 1 個、1 件"
+  },
+  "grepCopy": "【md-view】mdv-regress の中身を「flowchart」で検索、更新日 2026/11/01 以降（ファイル 1 個、1 件）\n\ndocs/guide.md\n  12: flowchart LR\n",
+  "grepHits": {
+    "hidden": false,
+    "summary": "ファイル 1 個、1 件"
+  },
+  "placeholder": "中身で探す（例：mermaid、TODO、受注番号）",
+  "viewGrepLine": {
+    "title": "A.java",
+    "path": "mdv-regress/src/A.java",
+    "meta": "UTF-8・31 B・<日時> 更新",
+    "modeBtn": null,
+    "lines": 3,
+    "head": [
+      "public class A {",
+      "\tint x = 1;"
+    ],
+    "hlLine": 2,
+    "colored": [
+      "hljs-keyword",
+      "hljs-number",
+      "hljs-operator",
+      "hljs-title class_",
+      "hljs-type",
+      "hljs-variable"
+    ]
+  },
+  "viewMd": {
+    "title": "README.md（プレビュー）",
+    "path": "mdv-regress/README.md",
+    "meta": "UTF-8・1.0 KB・<日時> 更新",
+    "modeBtn": "テキストで見る",
+    "text": "サンプル これは md-view の確認用です。詳しい説明 と 外のリンク。 項目 値 A 1 md text binary フォルダを選ぶ 種類 プレビュー テキスト リンクなし console.log('hello'); ［画像が見つかりません：docs/img/none.png］ 生の図 生の段落",
+    "mermaidSvg": 1,
+    "mermaidErr": [],
+    "imgOk": [
+      true
+    ],
+    "missing": [
+      "［画像が見つかりません：docs/img/none.png］"
+    ],
+    "local": [
+      "docs/guide.md"
+    ],
+    "external": [
+      "https://example.com"
+    ],
+    "htmlRaw": [
+      {
+        "svg": 1,
+        "marker": "url(#raw-arr)",
+        "script": 0,
+        "onclick": 0,
+        "text": "生の図 生の段落"
+      }
+    ],
+    "alerts": [],
+    "quotes": 0,
+    "code": [
+      [
+        "language-js hljs",
+        true
+      ]
+    ],
+    "math": []
+  },
+  "viewMdLink": {
+    "title": "guide.md（プレビュー）",
+    "path": "mdv-regress/docs/guide.md",
+    "meta": "UTF-8・179 B・<日時> 更新",
+    "modeBtn": "テキストで見る",
+    "text": "ガイド 戻る md-view 利用者 md-view 利用者 フォルダを選ぶ tree Mermaid の図を描けませんでした：Parse error on line 3: ...lowchart LR A --> ---------------------^ Expecting 'AMP', 'COLON', 'PIPE', 'TESTSTR', 'DOWN', 'DEFAULT', 'NUM'",
+    "mermaidSvg": 1,
+    "mermaidErr": [
+      "Mermaid の図を描けませんでした：Parse error on line 3:"
+    ],
+    "imgOk": [],
+    "missing": [],
+    "local": [
+      "README.md"
+    ],
+    "external": [],
+    "htmlRaw": [],
+    "alerts": [],
+    "quotes": 0,
+    "code": [],
+    "math": []
+  },
+  "viewMdText": {
+    "title": "guide.md",
+    "path": "mdv-regress/docs/guide.md",
+    "meta": "UTF-8・179 B・<日時> 更新",
+    "modeBtn": "プレビューで見る",
+    "lines": 14,
+    "head": [
+      "# ガイド",
+      ""
+    ],
+    "hlLine": null,
+    "colored": [
+      "hljs-code",
+      "hljs-link",
+      "hljs-section",
+      "hljs-string"
+    ]
+  },
+  "viewReuse": true,
+  "viewFeatures": {
+    "title": "features.md（プレビュー）",
+    "path": "mdv-regress/docs/features.md",
+    "meta": "UTF-8・396 B・<日時> 更新",
+    "modeBtn": "テキストで見る",
+    "text": "機能の確認 補足 補足の説明です。 注意 気をつけること。 ふつうの引用です。 SELECT id, name FROM users WHERE id = 1; public class A { int x = 1; } そのまま 文の中の数式 𝐸 = 𝑚 𝑐 2 と、お金の 100$ や $5 と $10。 ∫ 0 1 𝑥 2 𝑑 𝑥 = 1 3 𝑎 2 + 𝑏 2 = 𝑐 2",
+    "mermaidSvg": 0,
+    "mermaidErr": [],
+    "imgOk": [],
+    "missing": [],
+    "local": [],
+    "external": [],
+    "htmlRaw": [],
+    "alerts": [
+      "alert alert-note:補足 補足の説明です。",
+      "alert alert-warning:注意 気をつけること。"
+    ],
+    "quotes": 1,
+    "code": [
+      [
+        "language-sql hljs",
+        true
+      ],
+      [
+        "language-java hljs",
+        true
+      ],
+      [
+        "language-unknownlang",
+        false
+      ]
+    ],
+    "math": [
+      [
+        "math",
+        true,
+        "E = mc^2"
+      ],
+      [
+        "math math-display",
+        true,
+        "\\int_0^1 x^2 \\, dx = \\frac{1}{3}"
+      ],
+      [
+        "math math-display",
+        true,
+        "a^2 + b^2 = c^2"
+      ]
+    ]
+  },
+  "libsLoaded": [
+    "mermaid:true",
+    "katex:true",
+    "hljs:true"
+  ],
+  "viewEuc": {
+    "title": "euc.txt",
+    "path": "mdv-regress/src/euc.txt",
+    "meta": "EUC-JP・17 B・<日時> 更新",
+    "modeBtn": null,
+    "lines": 1,
+    "head": [
+      "日本語のテキスト",
+      ""
+    ],
+    "hlLine": null,
+    "colored": []
+  },
+  "viewSjis": {
+    "title": "sjis.sql",
+    "path": "mdv-regress/src/sjis.sql",
+    "meta": "Shift_JIS・7 B・<日時> 更新",
+    "modeBtn": null,
+    "lines": 1,
+    "head": [
+      "日本語",
+      ""
+    ],
+    "hlLine": null,
+    "colored": []
+  },
+  "viewHtml": {
+    "title": "page.html（プレビュー）",
+    "path": "mdv-regress/docs/page.html",
+    "meta": "UTF-8・523 B・<日時> 更新・スクリプトは動かしません",
+    "modeBtn": "テキストで見る",
+    "html": "HTML のプレビュー\n\nCSS が効いていれば青い枠です。\n\nREADME へ / 外\n\n押す",
+    "cssBorder": "rgb(0, 0, 255)",
+    "imgOk": [
+      true
+    ],
+    "local": [
+      "README.md"
+    ],
+    "sandbox": "allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+  },
+  "viewHtmlText": {
+    "title": "page.html",
+    "path": "mdv-regress/docs/page.html",
+    "meta": "UTF-8・523 B・<日時> 更新",
+    "modeBtn": "プレビューで見る",
+    "lines": 11,
+    "head": [
+      "<!doctype html>",
+      "<html lang=\"ja\"><head><meta charset=\"utf-8\"><title>テスト</title>"
+    ],
+    "hlLine": null,
+    "colored": [
+      "hljs-attr",
+      "hljs-keyword",
+      "hljs-meta",
+      "hljs-name",
+      "hljs-property",
+      "hljs-string",
+      "hljs-tag",
+      "hljs-title function_",
+      "hljs-variable language_"
+    ]
+  },
+  "autoUpdate": {
+    "title": "README.md（プレビュー）",
+    "path": "mdv-regress/README.md",
+    "meta": "UTF-8・52 B・<日時> 更新",
+    "modeBtn": "テキストで見る",
+    "text": "書き換えた 33% 67% a b",
+    "mermaidSvg": 1,
+    "mermaidErr": [],
+    "imgOk": [],
+    "missing": [],
+    "local": [],
+    "external": [],
+    "htmlRaw": [],
+    "alerts": [],
+    "quotes": 0,
+    "code": [],
+    "math": []
+  },
+  "whereFirst": {
+    "form": true,
+    "show": false
+  },
+  "whereWrong": "貼り付けたパスの最後のフォルダ名が「other」で、選んだフォルダ「mdv-regress」と違います。\n選んだフォルダそのもののパスを貼り付けてください。",
+  "whereSaved": "D:\\work\\mdv-regress",
+  "whereCopy": "D:\\work\\mdv-regress",
+  "whereSub": "D:\\work\\mdv-regress\\docs",
+  "whereView": "D:\\work\\mdv-regress\\docs\\guide.md"
+}

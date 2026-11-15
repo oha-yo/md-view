@@ -1,0 +1,80 @@
+/* md-view：一覧の画面の見た目 https://github.com/oha-yo/md-view */
+:root {
+  --blue: #5B7DB1;
+  --blue-pale: #E8EEF8;
+  --text: #222;
+  --muted: #888;
+  --line: #d8dee8;
+  --bg: #fff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", "Yu Gothic UI", Meiryo, sans-serif; color: var(--text); background: var(--bg); font-size: 14px; }
+
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px 16px; border-bottom: 2px solid var(--blue); background: var(--blue-pale); position: sticky; top: 0; z-index: 1; }
+.bar h1 { font-size: 18px; margin: 0 12px 0 0; color: var(--blue); }
+.ver { font-size: 12px; color: var(--muted); font-weight: normal; }
+button { font: inherit; padding: 5px 12px; border: 1px solid var(--blue); border-radius: 4px; background: #fff; color: var(--blue); cursor: pointer; }
+button:hover:not(:disabled) { background: var(--blue-pale); }
+button.primary { background: var(--blue); color: #fff; }
+button.primary:hover { background: #4a6a9c; }
+button:disabled { opacity: .45; cursor: default; }
+.auto { margin-left: auto; font-size: 13px; }
+.opt { font-size: 13px; margin-right: 8px; }
+
+.settings { margin: 8px 16px; font-size: 13px; }
+.settings label { display: block; margin-top: 6px; }
+.settings input[type=text] { width: 100%; max-width: 640px; font: inherit; padding: 4px 6px; }
+.note { color: var(--muted); margin: 4px 0; }
+
+.drop { margin: 8px 16px 24px; min-height: 60vh; border: 2px dashed transparent; border-radius: 6px; padding: 8px; }
+.drop.over { border-color: var(--blue); background: var(--blue-pale); }
+.status { color: var(--muted); margin-bottom: 8px; }
+
+.where { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 8px; }
+.where .lbl { font-size: 12px; color: #fff; background: var(--blue); border-radius: 3px; padding: 1px 6px; }
+.where #where-show, .where #where-form { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; flex: 1; }
+.where [hidden] { display: none !important; }
+.where code { font-family: Consolas, "BIZ UDGothic", monospace; font-size: 14px; background: var(--blue-pale); padding: 2px 8px; border-radius: 3px; word-break: break-all; }
+.where input { font: inherit; padding: 3px 6px; flex: 1; min-width: min(280px, 100%); max-width: 640px; font-family: Consolas, "BIZ UDGothic", monospace; }
+.where .hint { width: 100%; font-size: 12px; color: var(--muted); }
+/* 探す */
+.find { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 8px; }
+.find select, .find input[type=text] { font: inherit; padding: 4px 6px; }
+.find input[type=text] { flex: 1; min-width: min(240px, 100%); max-width: 560px; }
+.find-count { color: var(--muted); font-size: 13px; }
+.date-filter { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 13px; width: 100%; }
+.date-filter input { font: inherit; padding: 2px 4px; }
+.grep-opts { display: inline-flex; gap: 12px; font-size: 13px; width: 100%; }
+.find [hidden], .hits[hidden] { display: none !important; }
+.tree li[hidden] { display: none; }
+.hits { margin-top: 16px; border-top: 2px solid var(--blue); padding-top: 8px; font-family: Consolas, "BIZ UDGothic", monospace; font-size: 13px; }
+.hits-head { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; font-family: "Segoe UI", "Yu Gothic UI", Meiryo, sans-serif; color: var(--muted); }
+.hit-file { margin-top: 8px; font-weight: bold; color: var(--blue); }
+.hit-file .n { font-weight: normal; color: var(--muted); margin-left: 6px; }
+.hit-line { display: flex; gap: 10px; padding: 1px 4px 1px 16px; cursor: pointer; white-space: pre; overflow: hidden; text-overflow: ellipsis; }
+.hit-line:hover { background: var(--blue-pale); }
+.hit-line .ln { color: var(--muted); min-width: 4em; text-align: right; }
+.hits mark { background: #ffe58a; color: inherit; }
+.find .sort { font-size: 13px; margin-right: 12px; padding-right: 12px; border-right: 1px solid var(--line); }
+button.small { padding: 2px 8px; font-size: 12px; }
+button.icon-btn { display: inline-flex; padding: 3px; border-color: transparent; }
+button.icon-btn:hover { border-color: var(--blue); }
+
+.tree { font-family: Consolas, "BIZ UDGothic", monospace; font-size: 13px; line-height: 1.7; }
+.tree ul { list-style: none; margin: 0; padding-left: 18px; border-left: 1px dotted var(--line); }
+.tree > ul { padding-left: 0; border-left: none; }
+.tree summary { cursor: pointer; color: var(--blue); font-weight: bold; }
+.tree .count { color: var(--muted); font-weight: normal; margin-left: 6px; }
+.tree .file { display: flex; gap: 8px; align-items: baseline; }
+.tree a { color: var(--text); text-decoration: none; cursor: pointer; }
+.tree a:hover { text-decoration: underline; color: var(--blue); }
+.tree .file { align-items: center; }
+.tree .icon { display: inline-flex; color: var(--blue); padding: 2px; border-radius: 3px; opacity: .75; }
+.tree .icon:hover { background: var(--blue-pale); opacity: 1; }
+.tree .bin { color: var(--muted); }
+/* 更新日時の列：左端にそろえて出す（字下げに関係なく同じ位置） */
+.tree { position: relative; }
+.tree .date { display: none; position: absolute; left: 0; color: var(--muted); font-weight: normal; white-space: pre; }
+.tree.show-date { padding-left: 132px; }
+.tree.show-date .date { display: inline; }
+.tree .size { color: var(--muted); font-size: 11px; }

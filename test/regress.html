@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>md-view 回帰テスト</title>
+<style>
+  body { font-family: "Segoe UI", "Yu Gothic UI", Meiryo, sans-serif; margin: 16px; }
+  #result { font-size: 18px; font-weight: bold; margin: 8px 0; }
+  .ok { color: #2a7d2a; } .ng { color: #b22; }
+  pre { background: #f6f8fa; padding: 8px; font-size: 12px; white-space: pre-wrap; max-height: 60vh; overflow: auto; }
+  iframe { border: 1px solid #ccc; }
+  #app { width: 1000px; height: 700px; }
+  #views iframe { width: 900px; height: 600px; position: absolute; left: -10000px; top: 0; }
+</style>
+</head>
+<body>
+<h1>md-view 回帰テスト</h1>
+<p>md-view を下の枠で開いて自動で操作し、結果を <code>expected.json</code> と比べます（数十秒かかります）。<code>?update</code> を付けて開くと、今の結果を JSON で出します。</p>
+<div id="result">実行中…</div>
+<pre id="diff"></pre>
+<div id="views"></div>
+<iframe id="app"></iframe>
+<script src="regress.js"></script>
+</body>
+</html>
