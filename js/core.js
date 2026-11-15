@@ -3,7 +3,7 @@
 // どのファイルも、ふつうの <script> で読む（file:// で開いても動くように、ES モジュールにしない）。
 'use strict';
 
-const VERSION = '0.13.0';
+const VERSION = '0.13.1';
 const EXAMPLE_EXCLUDES = '.git, node_modules, .svn, .idea, .vs, __pycache__'; // 入力欄に薄く見せる例（初期値は空）
 const MAX_VIEW_SIZE = 20 * 1024 * 1024;  // これより大きいファイルは開かない
 const GREP_MAX_SIZE = 5 * 1024 * 1024;   // これより大きいファイルは中身を探さない

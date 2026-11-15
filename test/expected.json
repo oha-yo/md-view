@@ -9,6 +9,11 @@
     "katex:false",
     "hljs:false"
   ],
+  "hiddenAtStart": [
+    "where:none",
+    "find:none",
+    "hits:none"
+  ],
   "load": {
     "status": "「mdv-regress」 フォルダ 6 個・ファイル 14 個",
     "files": [
