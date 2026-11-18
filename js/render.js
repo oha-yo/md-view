@@ -141,6 +141,27 @@ async function renderCodeBlocks(box) {
   }
 }
 
+// コードの囲み（```sql など）の右上に、コピーのボタンを付ける（押したときの動きは viewer.js の onCodeCopy）。
+// Mermaid・数式は図にしたあとなので対象にならない。html-raw の中に書いた <pre> には付けない
+function addCopyButtons(box) {
+  const d = box.ownerDocument;
+  for (const code of box.querySelectorAll('pre > code')) {
+    const pre = code.parentElement;
+    if (pre.children.length !== 1 || pre.closest('.html-raw')) continue;
+    const wrap = d.createElement('div');
+    wrap.className = 'codebox';
+    pre.replaceWith(wrap);
+    wrap.appendChild(pre);
+    const b = d.createElement('button');
+    b.type = 'button';
+    b.className = 'code-copy';
+    b.title = 'コピー';
+    b.setAttribute('aria-label', 'コピー');
+    b.innerHTML = ICON_COPY; // 固定の SVG だけ
+    wrap.appendChild(b);
+  }
+}
+
 // リンク：外は新しいタブ、フォルダの中のファイルは data-local を付けて、別画面の中で開き直す（viewer.js）
 function markLinks(root, baseDir) {
   for (const a of root.querySelectorAll('a[href]')) {
@@ -176,6 +197,7 @@ async function renderMarkdown(text, v, doc) {
   await renderMath(box);
   await renderMermaid(box);
   await renderCodeBlocks(box);
+  addCopyButtons(box);
 
   for (const img of box.querySelectorAll('img')) {
     const src = img.getAttribute('src') || '';

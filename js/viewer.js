@@ -37,6 +37,12 @@ body { margin:0; font-family:"Segoe UI","Yu Gothic UI",Meiryo,sans-serif; color:
 .md .missing { color:#a33; font-size:12px; }
 .md .html-raw { margin:1em 0; overflow-x:auto; }
 .md pre code.hljs { padding:0; background:none; overflow:visible; }
+.md .codebox { position:relative; margin:1em 0; }
+.md .codebox > pre { margin:0; }
+.md .code-copy { position:absolute; top:6px; right:6px; display:flex; padding:4px; border:1px solid var(--line); border-radius:4px; background:#fff; color:#777; cursor:pointer; opacity:.55; }
+.md .codebox:hover .code-copy, .md .code-copy:focus { opacity:1; }
+.md .code-copy:hover { color:var(--blue); border-color:var(--blue); }
+.md .code-copy.done { opacity:1; color:#1a7f37; border-color:#1a7f37; }
 .md .math-display { display:block; margin:1em 0; padding:4px 0; overflow-x:auto; overflow-y:hidden; text-align:center; }
 .md .math-display math { font-size:1.15em; }
 .md .math-err { color:#a33; font-family:Consolas,monospace; }
@@ -76,6 +82,7 @@ function openView(node, mode, line) {
   doc.querySelector('[data-act=reload]').addEventListener('click', () => renderView(v));
   doc.querySelector('[data-act=mode]').addEventListener('click', () => showInView(v, v.node, v.mode === 'preview' ? 'text' : 'preview'));
   doc.addEventListener('click', (e) => onLocalLink(v, e));
+  doc.addEventListener('click', (e) => onCodeCopy(v, e));
   win.addEventListener('resize', () => fitFrame(v));
   state.views.add(v);
   renderView(v);
@@ -96,6 +103,21 @@ function onLocalLink(v, e) {
   e.preventDefault();
   const target = state.byPath.get(a.dataset.local);
   if (target && target.type !== 'binary') showInView(v, target, hasPreview(target) ? 'preview' : 'text');
+}
+
+// プレビューのコードの右上のボタン：そのコードをコピーする。
+// 押したのは別画面なので、別画面の navigator.clipboard を使う（この画面のものは、前に出ていないと使えない）
+function onCodeCopy(v, e) {
+  const b = e.target.closest && e.target.closest('.code-copy');
+  if (!b) return;
+  const code = b.parentElement.querySelector('pre > code');
+  const show = (icon, title, done) => { b.innerHTML = icon; b.title = title; b.classList.toggle('done', done); };
+  // 最後の改行は付けない（GitHub と同じ）
+  v.win.navigator.clipboard.writeText(code.textContent.replace(/\n$/, '')).then(() => {
+    show(ICON_CHECK, 'コピーしました', true);
+    clearTimeout(b._t);
+    b._t = setTimeout(() => show(ICON_COPY, 'コピー', false), 1500);
+  }, (err) => show(ICON_COPY, 'コピーできませんでした：' + err.message, false));
 }
 
 // HTML のプレビューの枠を、画面の残りの高さいっぱいにする

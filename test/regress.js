@@ -54,6 +54,7 @@ function stubWindow() {
     const f = d.createElement('iframe');
     f.style.cssText = 'position:absolute;left:-10000px;top:0;width:900px;height:600px';
     d.body.appendChild(f);
+    Object.defineProperty(f.contentWindow.navigator, 'clipboard', { value: { writeText: async (t) => { clip = t; } }, configurable: true });
     return f.contentWindow;
   };
   w.alert = (m) => alerts.push(m);
@@ -258,6 +259,11 @@ async function run() {
   // ---- 別画面：GitHub のアラート・コードの色付け・数式
   w.openView(S().byPath.get('docs/features.md'), 'preview'); await viewSettled();
   r.viewFeatures = viewInfo(lastView());
+  // コードの囲みの右上のコピーのボタン（数式の ```math には付かない）
+  const fd = lastView().win.document;
+  clip = '';
+  fd.querySelector('.code-copy').click(); await sleep(100);
+  r.codeCopy = { buttons: fd.querySelectorAll('.codebox > .code-copy').length, text: clip, done: fd.querySelector('.code-copy').classList.contains('done') };
   r.libsLoaded = ['mermaid', 'katex', 'hljs'].map((n) => n + ':' + w.mdView.libLoaded(n));
 
   // ---- 別画面：文字コード

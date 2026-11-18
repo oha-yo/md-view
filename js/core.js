@@ -3,7 +3,7 @@
 // どのファイルも、ふつうの <script> で読む（file:// で開いても動くように、ES モジュールにしない）。
 'use strict';
 
-const VERSION = '0.13.2';
+const VERSION = '0.14.0';
 const EXAMPLE_EXCLUDES = '.git, node_modules, .svn, .idea, .vs, __pycache__'; // 入力欄に薄く見せる例（初期値は空）
 const MAX_VIEW_SIZE = 20 * 1024 * 1024;  // これより大きいファイルは開かない
 const GREP_MAX_SIZE = 5 * 1024 * 1024;   // これより大きいファイルは中身を探さない
@@ -82,6 +82,7 @@ const svgIcon = (body) => `<svg viewBox="0 0 24 24" width="16" height="16" fill=
 const ICON_PREVIEW = svgIcon('<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>');            // 目
 const ICON_TEXT = svgIcon('<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h6"/>'); // 紙
 const ICON_COPY = svgIcon('<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>');
+const ICON_CHECK = svgIcon('<path d="M20 6 9 17l-5-5"/>'); // コピーできた印
 
 // ---------------------------------------------------------------- パス
 // tree の中のパスは、選んだフォルダから見た「/」区切り（例：docs/img/a.png）

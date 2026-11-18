@@ -399,6 +399,11 @@
       ]
     ]
   },
+  "codeCopy": {
+    "buttons": 3,
+    "text": "SELECT id, name FROM users WHERE id = 1;",
+    "done": true
+  },
   "libsLoaded": [
     "mermaid:true",
     "katex:true",
